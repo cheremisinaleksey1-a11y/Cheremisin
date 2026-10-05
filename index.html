@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Прогноз часа пика Кузбасс — экономия тарифа на мощность</title>
+  <style>
+    :root{--bg:#0b1120;--card:#111827;--text:#e2e8f0;--muted:#94a3b8;--accent:#38bdf8;--accent2:#10b981;}
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.55;}
+    a{color:var(--accent);text-decoration:none;}
+    .wrap{max-width:860px;margin:0 auto;padding:48px 24px;}
+    header{margin-bottom:56px;}
+    h1{font-size:clamp(1.8rem,5vw,2.8rem);line-height:1.15;font-weight:800;letter-spacing:-0.03em;}
+    .subtitle{margin-top:14px;color:var(--muted);font-size:1.05rem;max-width:640px;}
+    .badge{display:inline-block;margin-top:20px;padding:6px 14px;border-radius:999px;background:#1e293b;border:1px solid #1e293b;color:#e2e8f0;font-size:.85rem;}
+    section{margin-bottom:72px;}
+    h2{font-size:1.35rem;margin-bottom:16px;font-weight:700;}
+    .cards{display:grid;gap:14px;}
+    .card{background:var(--card);border:1px solid #1e293b;border-radius:14px;padding:22px;}
+    .card h3{font-size:1.05rem;margin-bottom:6px;}
+    .card p{color:var(--muted);font-size:.95rem;}
+    .price-row{display:flex;gap:16px;margin-top:8px;flex-wrap:wrap;}
+    .price{background:#0f172a;border:1px solid #1e293b;border-radius:10px;padding:16px;min-width:220px;}
+    .price .label{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;}
+    .price .value{font-size:1.35rem;font-weight:800;margin-top:6px;}
+    .price .note{font-size:.8rem;color:var(--muted);margin-top:4px;}
+    .cta{display:inline-flex;align-items:center;gap:8px;margin-top:10px;padding:14px 28px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#0ea5e9);color:#0b1120;font-weight:800;font-size:1rem;box-shadow:0 10px 30px rgba(56,189,248,.15);transition:transform .1s;}
+    .cta:hover{transform:translateY(-2px);box-shadow:0 14px 36px rgba(56,189,248,.22);}
+    .demo{background:#0f172a;border:1px solid #1e293b;border-radius:14px;padding:24px;}
+    .demo .label{font-size:.75rem;text-transform:uppercase;color:var(--muted);letter-spacing:.08em;}
+    .demo .big{font-size:2.4rem;font-weight:800;margin:10px 0;color:var(--accent2);}
+    .demo .sub{color:var(--muted);font-size:.95rem;}
+    footer{border-top:1px solid #1e293b;padding-top:32px;color:var(--muted);font-size:.85rem;}
+    @media(min-width:720px){.cards{grid-template-columns:1fr 1fr 1fr;}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Прогноз часа пика нагрузки для Кузбасса</h1>
+      <p class="subtitle">
+        Для снижения тарифа за мощность нужно знать час пика на завтра. Мы анализируем погоду, календарь и историю нагрузок, чтобы подсказать, когда снизить потребление и сэкономить.
+      </p>
+      <span class="badge">Работает через Telegram-бота</span>
+    </header>
+
+    <section>
+      <h2>Зачем это нужно</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Снижение тарифа за мощность</h3>
+          <p>Если снизить нагрузку в час пик — плата за максимальную мощность падает. Бот говорит, в какой именно час это сделать.</p>
+        </div>
+        <div class="card">
+          <h3>Анализ на основе данных</h3>
+          <p>Используем фактические почасовики, погоду и календарь. Модель обучена на исторических пиках Кузбасса.</p>
+        </div>
+        <div class="card">
+          <h3>Автоматическая рассылка</h3>
+          <p>Подписчики получают прогноз каждый день в 21:00. Можно запросить любой прошлый или будущий день.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Тарифы</h2>
+      <div class="price-row">
+        <div class="price">
+          <div class="label">Подписка</div>
+          <div class="value">1 500 ₽</div>
+          <div class="note">2 недели / автоматический прогноз в 21:00</div>
+        </div>
+        <div class="price">
+          <div class="label">Разовый прогноз</div>
+          <div class="value">300 ₽</div>
+          <div class="note">Завтра или любая дата (в т.ч. прошлая)</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Демо: прогноз на завтра</h2>
+      <div class="demo">
+        <div class="label">Пример прогноза для Кемерово</div>
+        <div class="big">19:00 МСК</div>
+        <div class="sub">Это примерный час пика для рабочего дня при текущих температуре и облачности. Точный прогноз формируется ботом после ввода ваших данных.</div>
+      </div>
+      <a class="cta" href="https://t.me/Engineering_times_bot">Перейти в бота и получить прогноз →</a>
+    </section>
+
+    <section>
+      <h2>Как работает</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>1. Ввод данных</h3>
+          <p>Выбираете город, указываете мощность и объём потребления.</p>
+        </div>
+        <div class="card">
+          <h3>2. Оплата</h3>
+          <p>Перевод по карте или СБП. Подписка активируется администратором после проверки.</p>
+        </div>
+        <div class="card">
+          <h3>3. Прогноз</h3>
+          <p>Получаете час пика на завтра или конкретную дату. Для подписчиков — автоматически в 21:00.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>© Прогноз пиковых нагрузок Кузбасс. Оплата через карту или СБП. Контакты для партнёров и предприятий: через Telegram-бота.</p>
+      <p style="margin-top:8px;color:#64748b;">Страница обновляется вручную. Для актуального прогноза — используйте бота.</p>
+    </footer>
+  </div>
+</body>
+</html>
